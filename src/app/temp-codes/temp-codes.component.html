@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-2">
+        </div>
+        <div class="col-lg-8">
+            <p><br><br>
+                Get Client Temp-Code , use 4 digits values , if customer CFI (1) then CFI is (0001)
+            </p>
+            <br>
+            CUSTOMER CFI
+            <div style="width: 50%;">
+                <input type="text" placeholder="0001" class="form-control" [(ngModel)]="tempCode" />
+                <br>
+                <button [disabled]="loading" class="form-control btn-sm btn-outline-primary" (click)="getTempCode()">
+                    SEARCH
+                </button>
+            </div>
+
+            <div>
+                <br>
+                <span style="color: green;"> {{ resultTempCode }} </span><br>
+
+                <!--  <span style="color: green;">{{ status }}</span> -->
+
+            </div>
+        </div>
+        <div class="col-lg-2">
+        </div>
+    </div>
+</div>
+<br><br><br><br><br><br><br>

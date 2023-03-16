@@ -1,0 +1,11 @@
+.fontsize1 {
+    font-size: smaller;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li:before {
+  content: '✓ ';
+}

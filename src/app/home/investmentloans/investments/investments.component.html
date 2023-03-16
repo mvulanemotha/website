@@ -1,0 +1,353 @@
+<div>
+    <div class="row hide">
+        <div class="col-lg-12">
+
+            <img class="img-fluid" src=" ../../../../../../assets/products intro.JPG">
+
+        </div>
+    </div>
+    <br><br>
+    <div class="row">
+        <div class="col-lg-12">
+            <p class="text-center" style="font-size: xx-large;"><span class="denimblue">INVEST IN</span> TOMORROW</p>
+        </div>
+    </div>
+</div>
+
+<br>
+
+<div class="container-fluid p-4" *ngIf="showPlatinum === false">
+    <div class="row">
+        <div class="col-lg-4 pb-3">
+            <div class="card box">
+                <div class="card-header">
+                    <img class="size" src="../../../../assets/fixed deposit.jpg">
+                </div>
+                <div class="card-body">
+                    <h6 class="card-title sapphire">Fixed Deposit</h6>
+                    <p class="card-text fontsize1">
+
+                        <span>
+
+                            Our monthly interest Fixed Deposit is offered
+
+                            for a minimum of two years and includes
+
+                            capital
+                            protection. Investors may opt to re-invest or withraw principal at maturity.
+                        </span>
+
+                    </p>
+                    <p></p>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 pb-3">
+            <div class="card box">
+                <div class="card-header">
+                    <img class="size img-fluid" src="../../../../assets/screen_2x.jpg">
+                </div>
+                <div class="card-body">
+                    <h6 class="card-title sapphire">Fixed Period Shares</h6>
+                    <p class="card-text fontsize1"> Fixed Period Shares are a medium-long term investment option that
+                        allows
+                        you
+                        to fix your capital for a period of
+                        24, 36 or 60 months at a fixed interest rate.
+                        <span class="sapphire" style="float: right;" *ngIf="readMore2 === false">
+                            <span (click)="readMore2 = true"><br><button style="float: right;"
+                                    class="btn btn-sm round shake">Read more</button></span>
+                        </span>
+                        <span *ngIf="readMore2">This investment option protects you from the
+                            decrease of the interest over the fixed period and assures you the security of your
+                            capital.
+                        </span>
+
+                        <span style="float: right;" *ngIf="readMore2" (click)="readMore2 = false">
+                            <button style="float: right;" class="btn btn-sm round">Show
+                                less</button>
+                        </span>
+
+                    </p>
+                    <p>
+
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 pb-3">
+            <div class="card box">
+                <div class="card-header">
+                    <img class="size" src="../../../assets/family.PNG">
+                </div>
+                <div class="card-body">
+                    <h6 class="card-title sapphire">Likusasa Fixed Deposit Account</h6>
+                    <p class="card-text fontsize1">
+                        Invest in your children's tomorrow by opening a Likusasa Fixed Account today. Our Likusasa Fixed
+                        Account is an investment account
+                        <span class="sapphire" style="float: right;" *ngIf="readMore3 === false">
+                            <span (click)="readMore3 = true"><br><button style="float: right;"
+                                    class="btn btn-sm round shake">Read More</button></span>
+                        </span>
+
+                        <span *ngIf="readMore3">
+                            tailor made specifically for minor children below the ages of 16 years.<br><br> It is the
+                            perfect
+                            option
+                            for parents (on behalf of thier children)
+                            to safeguard thier capital while earning or accumulating thier returns of interest.
+                        </span>
+                        <span class="sapphire" style="float: right;" *ngIf="readMore3" (click)="readMore3 = false"><br>
+                            <button style="float: right;" class="btn btn-sm round shake">Show
+                                less</button>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid pr-4">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="fade-in-text navyblue" style="float: right;">
+                <button class="mybutton round" routerLink="/contact">Speak to us</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <h6 class="midnightblue p-4">PERMANENT SHARES</h6>
+    </div>
+</div>
+
+<div class="container-fluid p-4">
+    <div class="row">
+        <div class="col-lg-4 pb-3">
+            <div class="card box">
+                <div class="card-header">
+                    <img class="size"
+                        src="../../../../assets/canva-putting-money-coins-into-piggy-saving-money,-concept-saving-money-for-the-future-in-retirement.-MAEdPvTI9fQ.jpg">
+                </div>
+                <div class="card-body">
+                    <h6 class="card-title sapphire">Silver Class</h6>
+                    <p class="card-text fontsize1">
+                        Our Silver Permanent Shares are your gateway to substantial savings. These shares are
+                        interest bearing
+                        shares and interest is set at prime -2%.
+                        Minimum investment period is 36 months.
+                    </p>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 pb-3">
+            <div class="card box">
+                <div class="card-header" >
+                    <img class="size" src="../../../../assets/s3.JPG">
+                </div>
+                <div class="card-body">
+                    <h6 class="card-title sapphire">Gold Class</h6>
+                    <p class="card-text fontsize1">
+                        Our Gold Class Permanent Shares represent part of a member’s ownership or equity in the Society.
+                        These permanent shares
+                        do not have a rate of interest instead, they
+                        <span class="sapphire" style="float: right;" *ngIf="goldShow === false"
+                            (click)="goldShow = true"><button style="float: right;" class="btn btn-sm round shake">Read
+                                More</button></span>
+
+                        <span *ngIf="goldShow">
+                            allow you to share in the profits of the `Society
+                            through dividend pay-outs.<br><br>
+                            The nature of these shares is such that they are not always available, the Society opens
+                            invitation for purchase of shares when need
+                            arises.
+                        </span><br>
+                        <span class="sapphire" style="float: right;" *ngIf="goldShow" (click)="goldShow = false">
+                            <button style="float: right;" class="btn btn-sm round shake">Show
+                                less</button>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 pb-3">
+            <div class="card box">
+                <div class="card-header">
+                    <img class="size" src="../../../../assets/platnum.JPG">
+                </div>
+                <div class="card-body">
+                    <h6 class="card-title sapphire">Platinum Class</h6>
+                    <p class="card-text">
+                    <p class="fontsize1">
+                        Our Platinum Class Permanent Shares are not publicly marketed but can be negotiated with the
+                        Building Society upone request.<br>
+                        <span class="sapphire" style="float: right;" *ngIf="sharesSow === false"
+                            (click)="sharesSow = true"><button style="float: right;" class="btn btn-sm round shake">Read
+                                More</button></span>
+
+
+                        <span *ngIf="sharesSow">
+
+                            These shares are
+                            suitable for
+                            high-net-worth individuals and institutional investors seeking investment options that offer
+                            alluring interest/dividends.
+
+                            <br>
+                            <br>
+                            The Building Society reserves the right to approve/decline any applicant and
+                            no
+                            transfer
+                            of permanent shares
+                            will be completed without the approval of the board of directors. These shares are not
+                            redeemable at
+                            the instance of the
+                            investor however, The Building Society
+                            reserves the
+                            right to redeem them
+                            at its own instance.
+                            <br>
+                            <span class="sapphire" style="float: right;">
+                                <span (click)="sharesSow = false;"><button style="float: right;"
+                                        class="btn btn-sm round shake">Show
+                                        less</button></span>
+                            </span>
+                        </span>
+
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="container-fluid pr-4">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="navyblue" style="float: right;">
+                    <p>
+                        <button class="mybutton round" routerLink="/contact">Speak to us</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h4 class="blue white p-4">
+        FUTURE INITIATIVES
+    </h4>
+    <br>
+    <p class="text-center">
+        Status Capital Building Society is getting back to basics for Emaswati by ensuring that members get to enjoy
+        membership
+        benefits through their savings and investments. Leveraging the simplicity of being a Building Society means that
+        we
+        consequently offer higher interest rates on savings and investments and lower interest rates on mortgage loans.
+        Although
+        we offer traditional as well as innovative products and services in the financial sector, SCBS continues to
+        tailor make
+        its products to suit your needs. Our future savings and investment options are listed below:
+    </p>
+
+    <!-- show requirements -->
+    <br>
+    <div class="container-fluid p-4">
+        <div class="row">
+            <div class="col-lg sapphire">
+                SAVINGS
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body midnightblue">
+
+                        Gold Account
+                        <hr>
+                        Silver Account
+                        <hr>
+                        Bronze Accounts
+                        <hr>
+                        Savings For Students – S4S
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body midnightblue">
+                        Savings for Juniors -S4J
+                        <hr>
+                        Collection Account
+                        <hr>
+                        Mula Account and our Special Call – Short Investment Account.
+                        <hr>
+                        Umncweba Savings
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <div class="container-fluid p-4">
+        <div class="row">
+            <div class="col-lg sapphire">
+                INVESTMENTS
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body midnightblue">
+
+                        Prime Linked Fixed Deposits
+                        <hr>
+                        Subcription Shares
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body midnightblue">
+                        Call Accounts
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br><br>
+
+<!--
+            
+            
+            <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p><span class="sapphire">INVESTMENT </span> OPTIONS</p>
+                    <P>
+                        More investment options soon to be introduced include:
+                    </P>
+                    <ul>
+                        <li>
+                            Prime-linked fixed deposits
+                        </li>
+                        <li>
+                            SCBS Call Account
+                        </li>
+                        <li>
+                            Subscription Shares
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        -->

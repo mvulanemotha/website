@@ -1,0 +1,326 @@
+<div>
+    <div class="row hide">
+        <div class="col-lg-12">
+            <img class="img-fluid" src="../../../assets/menu_pic/26.png">
+        </div>
+    </div>
+</div>
+<br><br>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-4">
+            <div class="text-center">
+                <a (click)="incomeDisplay = true; growthIncome = false; incomeInvestment = true; iniIncome() "
+                    class="nav-link" aria-current="page"><button class="btn btn-outline-primary btn_width">INCOME
+                        INVESTMENT
+                    </button></a>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="text-center">
+                <a (click)="growthIncome = true; incomeDisplay = false; incomeInvestment = false; iniGrowth() "
+                    class="nav-link"><button class="btn btn-outline-primary btn_width">GROWTH INVESTMENT</button></a>
+            </div>
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+</div><br><br>
+<div class="container-fluid" *ngIf="btnCalculator">
+
+    <div class="row p-4">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-6">
+            <!-- INCOME INPUT FIELDS  -->
+            <div class="bg-light mb-3 p-3" *ngIf="growthIncome">
+                <div style="color:blue" class="pl-4">GROWTH</div>
+                <div class="card-body">
+                    <label for="amount" class="p-1">Investment Amount:</label>
+                    <label id="amountError" style="font-size:x-small; color:red"></label>
+                    <input id="amountField" type="number" class="form-control" [(ngModel)]="investment"
+                        (keyup)="greaterThanMillion()" />
+                    <br>
+                    <label class="p-1" for="">Term <span style="font-size:x-small; color:red;">(Years)</span> </label>
+                    <select class="form-control p-1" [(ngModel)]="term" (change)="growthRate()">
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="5">5</option>
+                    </select><br>
+                    <span>Nominal annual Interet rate:</span>
+                    <input [disabled]="true" type="text" class="form-control" [(ngModel)]="rate" />
+                    <br>
+
+                    <span class="p-3" style="text-align: center; color:red" *ngIf="errorAmount">
+                        <br>
+                        Investment value should be greater than E 0.00
+                        <br>
+                    </span>
+                    <br>
+                    <input type="button" class="form-control" value="CALCULATE" style="color: #3767AF;"
+                        (click)="calculateGrowthInvestment()" />
+                </div>
+
+            </div>
+
+            <!-- INCOME INPUT FIELDS  -->
+            <div class="bg-light mb-3 p-3" *ngIf="incomeDisplay">
+                <div style="color:blue" class="pl-4">INCOME</div>
+                <div class="card-body">
+                    <label for="amount" class="p-1">Investment Amount:</label>
+                    <input type="number" class="form-control" [(ngModel)]="investment" />
+                    <br>
+                    <label class="p-1" for="">Term <span style="font-size:x-small; color:red;">(Years)</span> </label>
+                    <select class="form-control p-1" [(ngModel)]="term" (change)="rateChange()">
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select><br>
+                    <span>Nominal annual Interet rate:</span>
+                    <input [disabled]="true" type="text" class="form-control" [(ngModel)]="rate" />
+                    <br>
+
+                    <span class="p-3" style="text-align: center; color:red" *ngIf="errorAmount">
+                        <br>
+                        Investment value should be greater than E 0.00
+                        <br>
+                    </span>
+                    <br>
+                    <input type="button" class="form-control" value="CALCULATE" style="color: #3767AF;"
+                        (click)="calculator()" />
+                </div>
+
+            </div>
+        </div>
+        <div class="col-lg-5" id="results">
+            <div class="pl-3"><b>RESULTS</b></div>
+            <div class="mb-3" style="background-color:whitesmoke ;">
+                <div class="card-body text-primary">
+                    <div *ngIf="incomeDisplay">
+                        <h6 style="font-size: small ;">Minimum Monthly Amount</h6>
+                        <p style="color:black; font-size: small"><b>E {{ minPay }}</b></p>
+                        <h6 style="font-size: small;">Maximum Monthly Amount</h6>
+                        <p style="color: black; font-size: small"><b>E {{ maxPay }}</b> </p>
+                        <hr>
+                    </div>
+
+                    <h6 class="card-title">Total Interest:</h6>
+                    <p class="card-text"><span style="color: black;"><b>E {{totalInterest}} </b></span></p>
+                    <br>
+                    <h6 class="card-title">Total Amount:</h6>
+                    <p class="card-text"><span style="color: black;"><b>E {{totalAmount}}</b></span></p>
+
+                </div>
+            </div>
+            <!-- print qoutation -->
+            <!--<div class="text-center">
+                <input type="radio" (change)="radioChangeIncome($event)" name="invetmentType" /> INCOME
+                &nbsp;&nbsp;
+                <input type="radio" (change)="radioChangeGrowth($event)" name="invetmentType" />
+                GROWTH
+            </div>-->
+            <br>
+            <div>
+                <button class="btn btn-primary form-control" printSectionId="qoutation" [useExistingCss]="true"
+                    ngxPrint>SAVE OR PRINT QOUTATION</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="qoutation" style="display: none ;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2">
+            </div>
+            <div class="col-lg-8">
+
+                <div>
+                    <!-- display qoutaion  -->
+                    <div *ngIf="growthIncome">
+                        <img style="width: 100% ;" src="../../../../assets/qoutationheader.PNG" class="img-fluid">
+                    </div>
+                    <div *ngIf="incomeInvestment">
+                        <img style="width: 100% ;" src="../../../../assets/incomeheader.PNG" class="img-fluid" />
+                    </div>
+                    <br><br>
+
+                    <div class="row">
+                        <div class="col-lg  d-flex justify-content-between">
+                            <!-- amount and term -->
+                            <div>
+                                <table>
+                                    <tr>
+
+                                        <td><span>PARTICIPATION AMOUNT :</span><b>&nbsp; {{ investmentQoutation }}</b>
+                                    <tr>
+                                        <td><span>PARTICIPATION TERM:</span> <b>&nbsp; {{ term }} Years</b>
+                                        </td>
+                                    </tr>
+                                    <tr *ngIf="incomeInvestment"> <br>
+                                        <td><span>Min Amount </span> <b>&nbsp;E
+                                                {{minPay}}</b></td>
+                                    </tr>
+                                    <tr *ngIf="incomeInvestment">
+                                        <td><span>Max Amount</span> <b>&nbsp;E
+                                                {{maxPay}}</b></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div>
+                                <table>
+                                    <tr>
+                                        <td><span>DATE:</span><span
+                                                style="float:right ;">&nbsp;&nbsp;.........................................................</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>VALID UNTIL:</span><span
+                                                style="float: right ;">&nbsp;&nbsp;.........................................................</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>QUOTE:</span><span
+                                                style="float:right ;">&nbsp;&nbsp;.........................................................</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <br><br>
+                    <!-- table with qoutation  -->
+                    <div>
+                        <table class="table table-bordered">
+                            <thead>
+                                <th></th>
+                                <th>RETURN RATE</th>
+                                <th>INCOME P.A.</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Year 1</td>
+                                    <td>{{ rate }} %</td>
+
+                                    <td>E {{ rowOne.toLocaleString("en-US").toString() }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Year 2</td>
+                                    <td>{{ rate }} %</td>
+
+                                    <td>E {{rowTwo.toLocaleString("en-US").toString()}}</td>
+                                </tr>
+                                <tr *ngIf="threeRows">
+                                    <td>Year 3</td>
+                                    <td>{{ rate }} %</td>
+
+                                    <td>E {{ rowThree.toLocaleString("en-US").toString() }}</td>
+                                </tr>
+                                <tr *ngIf="fourRows">
+                                    <td>Year 4</td>
+                                    <td>{{ rate }} %</td>
+
+                                    <td>E {{ rowFour.toLocaleString("en-US").toString() }}</td>
+                                </tr>
+                                <tr *ngIf="fiveRows">
+                                    <td>Year 5</td>
+                                    <td>{{ rate }} %</td>
+
+                                    <td>E {{ rowFive.toLocaleString("en-US").toString() }}</td>
+                                </tr>
+                                <tr>
+                                    <td><b>TOTAL INTEREST</b></td>
+                                    <td></td>
+                                    <td [rowSpan]="3"><b>E {{totalInterest}}</b></td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-lg-2">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div>
+                    <ul>
+                        <li>A five day consideration period applies</li>
+                        <li>Your capital is refundable at maturity</li>
+                        <li>A deposit/share certificate will be issued as proof of your deposit/shares</li>
+                        <li>There are no administrative charges</li>
+                    </ul>
+                </div>
+                <div>
+                    <p>
+                        <b>Disclaimer</b><br>
+                        Please note that this quotation is only one part of the deposit/share application. Terms and
+                        conditions
+                        are applicable to this investment as contained in the application documents, fact sheet, Rules
+                        and the Building
+                        Societies Act of 1962 ( as amended )
+                    </p>
+                </div>
+                <div>
+                    <div>
+                        <br>
+                        <td>
+                            <span class="border form-control" style="width: 750px ;"></span>
+                            <span><b>Investor Full Name</b></span>
+                        </td>
+                    </div>
+                    <br>
+                    <div class="pe-3; d-flex justify-content-between">
+                        <div class="">
+                            <div class="border" style="height: 70px; width:300px"></div>
+                            <div class="text-center;">
+                                <b>Investor Signature</b>
+                            </div>
+                        </div>
+                        <div>
+                            <p style="float: right ;" class="pt-3"><span class="border form-control"
+                                    style="width: 380px ;"></span>
+                                <b>Date Signed</b>
+                            </p>
+                        </div>
+                    </div>
+                    <br>
+                    <div>
+                        <span class="border form-control" style="width: 750px ;"></span>
+                        <span><b>Representative Full Name</b></span>
+                    </div>
+                    <br>
+                    <div class="d-flex justify-content-between">
+                        <div class="">
+                            <div class="border" style="height: 70px; width:300px"></div>
+                            <div class="text-center; pe-3">
+                                <b>Representative Signature</b>
+                            </div>
+                        </div>
+                        <div class="">
+                            <p class="pt-3"><span class="border form-control" style="width: 380px ;"></span>
+                                <b>Date Signed</b>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <br><br><br>
+                <div style="background-color: darkblue ;">
+                    <br>
+                    <p style="text-align:center; color: white;">
+                        Office Nr 12, The Cresent, Ezulwini, Eswatini | +268 2417 1975 |
+                        info@scbs.co.sz | www.scbs.co.sz<br>
+                        FRSA No. BS/02/2020
+                    </p>
+                    <br>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<br><br><br><br><br><br>

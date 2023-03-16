@@ -1,0 +1,17 @@
+.font {
+    font-size: xx-large;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.font1 {
+    font-size: large;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.justify {
+    text-align: justify;
+}
+
+.bg {
+    background-color: whitesmoke;
+}

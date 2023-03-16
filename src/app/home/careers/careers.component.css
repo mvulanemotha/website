@@ -1,0 +1,25 @@
+
+.font {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: larger;
+  text-align: center;
+  
+}
+
+.font1 {
+  text-align: center;
+  font-size: larger;
+}
+
+
+.justify{
+  text-align: justify;
+}
+
+.round {
+    border-radius: 20px;
+    background-color: #B2CDEC;
+}
+
+
+

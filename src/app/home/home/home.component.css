@@ -1,0 +1,55 @@
+.fontheader {
+
+    font-size: larger;
+
+}
+
+
+
+.justify {
+    text-align: justify;
+    color: black;
+}
+
+.size {
+    float: left;
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+}
+
+
+a {
+
+    font-size: medium;
+}
+
+.sizepic {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: fill;
+}
+
+.sizeheader {
+    font-size: xx-large;
+}
+
+
+.backgound {
+    background-image: url('../../../assets/menu_pic/background.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.round {
+    border-radius: 20px;
+    background-color: #B2CDEC;
+}
+
+.fontsize {
+    font-size: x-large;
+}
+
+.fontsize1 {
+    font-size: smaller;
+}

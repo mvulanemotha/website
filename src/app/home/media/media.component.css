@@ -1,0 +1,46 @@
+.box:hover {
+  background: blue;
+  /* make this whatever you want */
+}
+
+.box {
+  max-height: 400px;
+  max-width: 400px;
+}
+
+.cl {
+  color: royalblue;
+}
+
+.db {
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.pop:hover {
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.hd {
+  background-image: url('../../../assets/media.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.cll {
+  color: white;
+  font-size: xx-large;
+  font-weight: 400;
+}
+
+h6 {
+
+  line-height: 2;
+
+}
+
+.pointer:hover {
+  font-size: x-large;
+  cursor: pointer;
+}

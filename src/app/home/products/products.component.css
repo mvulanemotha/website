@@ -1,0 +1,58 @@
+.justify {
+    text-align: justify;
+}
+
+.round {
+    border-radius: 25%;
+}
+
+.center {
+    align-items: center;
+}
+
+.fill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
+}
+.fill img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%
+}
+
+.divH{
+    height: 200px;
+}
+
+.font {
+    font-size: xx-large;
+}
+
+.backPic {
+    background-image: url('../../../assets//products.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.cl {
+    font-size: larger;
+}
+
+.size {
+    float: left;
+    width:  100%;
+    height: 380px;
+    object-fit: cover;
+}
+
+
+
+.fontsize1 {
+    font-size: smaller;
+}
+.round {
+    border-radius: 20px;
+    background-color: #B2CDEC;
+}

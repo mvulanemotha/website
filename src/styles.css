@@ -1,0 +1,141 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+/*@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');*/
+
+/* my font family */
+
+* {
+    font-family: 'Open Sans';
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+    .hide {
+        display: none;
+    }
+
+    .showNav {
+        display: block;
+    }
+
+}
+
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (min-width: 601px) {
+
+    .showNav {
+        display: none;
+    }
+
+}
+
+
+/* */
+
+.black {
+    color: #000000;
+}
+
+.darkgrey {
+    color: #636466;
+}
+
+.mediumgrey {
+    color: #939598;
+}
+
+.lightgrey {
+    color: #C7C8CA;
+}
+
+.white {
+    color: #FFFFFF;
+}
+
+
+/* Navy Blue */
+
+.navyblue {
+    color: #0d143d;
+}
+
+.midnightblue {
+    color: #27376E;
+}
+
+.denimblue {
+    color: #365D93;
+}
+
+.sapphire {
+    color: #3767AF;
+}
+
+.cornflowerblue {
+    color: #6ABDC5;
+}
+
+.fadedskyblue {
+    color: #B2CDEC;
+}
+
+.fadedskyblueBG {
+    background-color: #27376E;
+}
+
+
+
+
+/*    navy blue #
+ */
+/*    midnight blue #191970 */
+
+.box {
+    transition: box-shadow .3s;
+
+
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background: #fff;
+    float: left;
+
+}
+
+.box:hover {
+    box-shadow: 0 0 50px rgba(33, 33, 33, .2);
+}
+
+.shake:hover {
+    animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both infinite;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+@keyframes shake {
+
+    10%,
+    90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%,
+    80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}

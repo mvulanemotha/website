@@ -1,0 +1,23 @@
+.bg {
+     background-image: linear-gradient(to right, #365D93, #0D143D);
+}
+
+.justify {
+    text-align: justify;
+}
+
+.lg {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.cl {
+    color: royalblue;
+}
+
+.gb {
+    background-color : #B2CDEC;
+}
+
+.white {
+    color: whitesmoke;
+}

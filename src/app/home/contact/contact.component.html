@@ -1,0 +1,150 @@
+<div class="hide">
+    <div class="row">
+        <div class="col-lg-12">
+            <img class="img-fluid" src="../../../assets/contact_.png">
+        </div>
+    </div>
+</div>
+<br>
+<p class="text-center p-3 " style="color: blue; text-transform: uppercase"> </p>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12 p-5">
+            <div class="p-1">
+                <h4>Location</h4>
+                <div><iframe class="map"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4249.982775550076!2d31.173016344644278!3d-26.39780079124972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDIzJzQ5LjkiUyAzMcKwMTAnMzEuMCJF!5e0!3m2!1sen!2sza!4v1614681443559!5m2!1sen!2sza"
+                        width="100%" height="650" style="border:1;" allowfullscreen="true" loading="lazy"></iframe>
+                </div>
+                <div class="text-right">
+                    <span style="color:#91aed0; "> <img width="30px" height="30px" src="../../../assets/locator.png">
+                        Status
+                        Capital Building
+                        Society </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-1">
+
+        </div>
+        <div class="col-lg-8">
+            <p class=" " style="color:#91aed0; text-transform: uppercase">
+                <span>Have you taken an interest in the Status Capital Building Society?</span><br>
+                <span>Get in touch with
+                    us:</span>
+
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- contact information  -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-11">
+            <div class="row">
+                <!-- contact -->
+                <div class="col-lg-8 pb-4">
+
+
+                    <br>
+                    <div class="card p-3">
+                        <div class="card-title">
+                            <div *ngIf="saved" class="form-control alert-success text-center">
+                                Thankyou for contacting us.
+                            </div>
+                            <div *ngIf="failedSave" class="form-control alert-danger text-center">
+                                Failed To Send message, Please Try Again
+                            </div>
+                            <div *ngIf="emptyFields" class="form-control alert-danger text-center">
+                                All fields Should be filled
+                            </div>
+                        </div>
+                        <div style="color:#91aed0; text-transform: uppercas">
+                            SEND MESSAGE
+                        </div>
+                        <br>
+                        <div>
+                            <label>First Name</label>
+                            <input type="text" class="form-control" [(ngModel)]='clientName'>
+                        </div>
+                        <div>
+                            <label>Last Name</label>
+                            <input type="text" class="form-control" [(ngModel)]='surname'>
+                        </div>
+                        <div>
+                            <label>Email</label>
+                            <input id="email" type="email" class="form-control" [(ngModel)]='email'>
+                        </div>
+                        <div>
+                            <label>Phone</label>
+                            <input type="number" class="form-control" [(ngModel)]='phone'>
+                        </div>
+                        <div>
+                            <label>Message</label>
+                            <textarea cols="10" class="form-control" [(ngModel)]='message'> </textarea>
+                        </div>
+                        <br>
+                        <div class="">
+                            <button style="width: 150px ;" class="btn btn-sm round" type="submit" [disabled]='sending'
+                                (click)='sendMessage()'>Submit</button>
+                        </div>
+                    </div>
+                </div>
+                <br><br>
+                <!-- map -->
+                <div class="col-lg-4 pb-3">
+                    <div class="d-flex">
+                        <div class="p-2" style="color:#91aed0;">
+                            <p>
+                                <i class='fas fa-map-marker-alt fa-lg'></i> &nbsp; The Cresent, Ezulwini
+                            </p>
+                            <P>
+                                <i class='far fa-clock fa-lg'></i> &nbsp;Mon - Fri, 08:00 - 16:30 <br>
+                                <i class='far fa-clocsk'></i> &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;Sat, 10:00 - 14:00
+                            </P>
+                            <p>
+                                <i class='far fa-envelope fa-lg'></i> &nbsp; info@scbs.co.sz
+                            </p>
+                            <p>
+                                <i class='fas fa-phone fa-lg'></i> +268 24171975
+                            </p>
+                            <p>
+                                <a style="color:#91aed0; text-decoration:none"
+                                    href="https://api.whatsapp.com/send?phone=268%207944%206339"><i
+                                        class="fab fa-whatsapp fa-lg"></i> &nbsp;
+                                    WHATSAPP</a>
+                            </p>
+                        </div>
+                        <div class="p-2">
+
+                        </div>
+
+                    </div>
+
+                    <!--
+                    <div class="map bd">
+                        <img src="../../../assets/Status Building Society Map.JPG"
+                            style="max-width: 100%; max-height: 100%; ">
+                    </div>
+                -->
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+<br><br>

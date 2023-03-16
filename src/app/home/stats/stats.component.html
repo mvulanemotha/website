@@ -1,0 +1,407 @@
+<br><br>
+<div class="container">
+    <h3 style="text-decoration: underline;">
+        Summary Of Site Visits
+    </h3>
+</div>
+<br><br>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <button (click)="today = true; daily = false; monthly = false; yearly = false; getTodayStats();"
+                class="btn btn-primary btn-sm">Today</button>&nbsp;&nbsp;&nbsp;
+            <button
+                (click)="today = false; daily = true; monthly = false; yearly = false; getDailyAVStats(monthDaily , monthYearly);"
+                class="btn btn-primary btn-sm">Daily</button>&nbsp;&nbsp;&nbsp;
+            <button (click)="today = false; daily = false; monthly = true; yearly = false; getMontly();"
+                class="btn btn-primary btn-sm">Monthly</button>&nbsp;&nbsp; &nbsp;&nbsp;
+            <button (click)="today = false; daily = false; monthly = false; yearly = true; getYearly()"
+                class="btn btn-primary btn-sm">Yearly</button>
+        </div>
+    </div>
+</div>
+<br><br><br><br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+
+
+            <!-- container of daily stats  -->
+            <div *ngIf="daily">
+                <div class="col-lg-3 p-2 d-flex">
+                    <div>
+                        <label>
+                            Month
+                        </label>
+                        <select style="width: 150px;" [(ngModel)]="monthDaily" class="form-control">
+                            <option value="1">January</option>
+                            <option value="2">February</option>
+                            <option value="3">March</option>
+                            <option value="4">April</option>
+                            <option value="5">May</option>
+                            <option value="6">June</option>
+                            <option value="7">July</option>
+                            <option value="8">August</option>
+                            <option value="9">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                        <br>
+                    </div>
+                    <div>
+                        <label>Year</label>
+                        <select style="width: 150px;" [(ngModel)]="monthYearly" class="form-control">
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                        </select>
+                    </div>
+                    <div class="pl-2">
+                        <label>&nbsp;</label>
+                        <button (click)='getDailyAVStats(monthDaily, monthYearly )'
+                            class="btn btn-sm btn-primary">Search</button>
+                    </div>
+                </div>
+                <div>
+                    <div style="overflow-y: scroll; height:400px;">
+                        <table class="table">
+                            <thead>
+                                <th>
+                                    No
+                                </th>
+                                <th>
+                                    Day
+                                </th>
+                                <th>
+                                    Number
+                                </th>
+                            </thead>
+                            <tbody>
+                                <tr class="text-center" *ngIf="spin">
+                                    <td colspan="3">
+                                        <img style="width: 150px;" src="../../../assets/Spinner-2.3s-200px.gif" />
+                                    </td>
+                                </tr>
+                                <tr *ngFor="let data of myData; let i = index;">
+                                    <td>{{ i+1 }}</td>
+                                    <td>{{ data["day"]}}</td>
+                                    <td>{{ data["no"] }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- container of daily stats  -->
+            <div *ngIf="today">
+                <div class="text-left">
+                    Today sites visits {{ visits }}
+                </div>
+                <br>
+                <div style="overflow-y: scroll; height:400px;">
+
+                    <table class="table">
+                        <thead>
+                            <th>
+                                No
+                            </th>
+                            <th>
+                                City Region
+                            </th>
+                            <th>
+                                Time
+                            </th>
+                        </thead>
+                        <tbody>
+                            <tr class="text-center" *ngIf="spin">
+                                <td colspan="3">
+                                    <img style="width: 150px;" src="../../../assets/Spinner-2.3s-200px.gif" />
+                                </td>
+                            </tr>
+                            <tr *ngFor="let data of myData; let i = index;">
+                                <td>{{ i+1 }}</td>
+                                <td>{{ data["ip"]}}</td>
+                                <td>{{ data["date"] }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+            <!-- monthly -->
+            <div *ngIf="monthly">
+
+                <div class="col-lg-3 p-2 d-flex">
+                    <div>
+                        <label>Year</label>
+                        <select [(ngModel)]="monthYearly" style="width: 150px;" class="form-control">
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                        </select>
+                    </div>
+                    <div class="pl-2 pt-2">
+                        <br>
+                        <button (click)="getMontly()" class="btn btn-sm btn-primary">Search</button>
+                    </div>
+                </div>
+                <br>
+                <div>
+                    Monthly
+
+                    <div *ngIf="!allMonthly">
+                        <div style="overflow-y: scroll; height:400px;">
+                            <table class="table">
+                                <thead>
+                                    <th>
+                                        No
+                                    </th>
+                                    <th>
+                                        Month
+                                    </th>
+                                    <th>
+                                        Number
+                                    </th>
+                                    <th>Action</th>
+                                </thead>
+                                <tbody>
+                                    <tr class="text-center" *ngIf="spin">
+                                        <td colspan="4">
+                                            <img style="width: 150px;" src="../../../assets/Spinner-2.3s-200px.gif" />
+                                        </td>
+                                    </tr>
+                                    <tr *ngFor="let data of myData; let i = index;">
+                                        <td>{{ i+1 }}</td>
+                                        <td>{{ getMonthName(data["month"]) }}</td>
+                                        <td>{{ data["no"] }}</td>
+                                        <td> <button class="btn btn-sm btn-primary"
+                                                (click)="getMonthlyLog(data['month'])">View</button> </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- container of a logs og the  -->
+                    <div *ngIf="allMonthly">
+                        <div style="overflow-y: scroll; height:400px;">
+
+                            <table class="table">
+                                <thead>
+                                    <th>
+                                        No
+                                    </th>
+                                    <th>
+                                        City Region
+                                    </th>
+                                    <th>
+                                        Time
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let data of myDataMonthly; let i = index;">
+                                        <td>{{ i+1 }}</td>
+                                        <td>{{ data["ip"] }}</td>
+                                        <td>{{ data["date"] }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="text-right">
+                            <button class="btn btn-sm btn-secondary" (click)="allMonthly = false;">Back</button>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+            </div>
+            <!-- yearly -->
+            <div *ngIf="yearly">
+                <div style="overflow-y: scroll; height:400px;">
+                    Yearly
+                    <table class="table">
+                        <thead>
+                            <th>
+                                No
+                            </th>
+                            <th>
+                                Year
+                            </th>
+                            <th>
+                                Number
+                            </th>
+                        </thead>
+                        <tbody>
+                            <tr class="text-center" *ngIf="spin">
+                                <td colspan="3">
+                                    <img style="width: 150px;" src="../../../assets/Spinner-2.3s-200px.gif" />
+                                </td>
+                            </tr>
+                            <tr *ngFor="let data of myData; let i = index;">
+                                <td>{{ i+1 }}</td>
+                                <td>{{ data["date"] }}</td>
+                                <td>{{ data["no"] }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <br>
+            <!-- Print option 
+            <div style="float: right;" class="p-3">
+                <button class="btn btn-warning">Print</button>
+            </div>
+        -->
+        </div>
+    </div>
+</div>
+<br>
+<hr>
+<br><br>
+
+<h3 class="container" style="text-decoration: underline;">Page Visits</h3>
+<br><br>
+<!-- Cater for  -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+
+            <label>Year</label>
+            <select style="width: 250px;" [(ngModel)]="yearlyPage" class="form-control">
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+            </select>
+
+            <label>Month</label>
+            <select style="width: 250px;" [(ngModel)]="monthlyPage" class="form-control">
+                <option value="1">January</option>
+                <option value="2">February</option>
+                <option value="3">March</option>
+                <option value="4">April</option>
+                <option value="5">May</option>
+                <option value="6">June</option>
+                <option value="7">July</option>
+                <option value="8">August</option>
+                <option value="9">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+            </select>
+
+            <br>
+            <div>
+                <button [disabled]="loadpageStats" style="width: 250px;" class="btn btn-sm btn-primary"
+                    (click)='pageVisited(monthlyPage , yearlyPage)'>View</button>
+            </div>
+
+        </div>
+        <div class="col-lg-9">
+            <div style="overflow-y: scroll; height:400px;">
+                <table class="table">
+                    <thead>
+                        <th>Page</th>
+                        <th>Visits</th>
+                    </thead>
+
+                    <tr>
+                        <td>Home</td>
+                        <td>{{ home }}</td>
+                    </tr>
+                    <tr>
+                        <td class="alert-danger" colspan="2">Products</td>
+                    </tr>
+
+                    <tr>
+                        <td>Investments</td>
+                        <td>{{ investments }}</td>
+                    </tr>
+                    <tr>
+                        <td>Loans</td>
+                        <td> {{ loans }} </td>
+                    </tr>
+                    <tr>
+                        <td><br></td>
+                    </tr>
+                    <tr>
+                        <td>Mortgage</td>
+                        <td> {{ mortgage}}</td>
+                    </tr>
+                    <tr>
+                        <td>Innovations</td>
+                        <td> {{ innovations }} </td>
+                    </tr>
+                    <tr>
+                        <td>Media</td>
+                        <td> {{ media }} </td>
+                    </tr>
+                    <tr>
+                        <td>Careers</td>
+                        <td> {{ careers }} </td>
+                    </tr>
+                    <tr>
+                        <td>Contact</td>
+                        <td> {{ contact }} </td>
+                    </tr>
+                    <tr>
+                        <td><br></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="alert-danger">Future Initiatives</td>
+                    </tr>
+                    <tr>
+                        <td>Loans</td>
+                        <td>{{ futureloans }}</td>
+                    </tr>
+                    <tr>
+                        <td>Savings & Investments</td>
+                        <td>{{ futuresavings }} </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Corporate Governance</td>
+                        <td>{{ corporategovernance }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>Management & Board of directors</td>
+                        <td>{{ management }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>Why Choose Us</td>
+                        <td> {{ whychooseus }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>Twitter</td>
+                        <td>{{ twitter }}</td>
+                    </tr>
+                    <tr>
+                        <td>linkedin</td>
+                        <td>{{ linkedin }} </td>
+                    </tr>
+                    <tr>
+                        <td>Facebook</td>
+                        <td> {{ facebook }} </td>
+                    </tr>
+                    <tr>
+                        <td>Instagram</td>
+                        <td>{{ instagram }}</td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<br><br><br><br><br><br><br>

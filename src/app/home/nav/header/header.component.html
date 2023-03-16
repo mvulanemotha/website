@@ -1,0 +1,120 @@
+<div class="hide sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light  py-4 sticky-top cl">
+        <a routerLink="/home"><img src="../../../../assets/statuslogo.svg" style="width: 200px;"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto topnav myheight nav-fill">
+                <!-- w-100  -->
+                <li class="nav-item active">
+                    <a class="nav-link" routerLink="/home" routerLinkActive="active-link"
+                        (click)="savepageclicked('home')">HOME<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown" routerLinkActive="active-link">
+                    <a class="nav-link" id="navdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">PRODUCTS</a>
+
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" routerLink="/investments"
+                            (click)="savepageclicked('investments')">INVESTMENTS</a>
+                        <a class="dropdown-item" routerLink="/loans" (click)="savepageclicked('loans')">LOANS</a>
+                        <!-- <a class="dropdown-item" routerLink="/savingsaccount">SAVINGS ACCOUNT</a> -->
+                    </div>
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/mortgage" routerLinkActive="active-link"
+                        (click)="savepageclicked('mortgage')">MORTGAGE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/calculator" routerLinkActive="active-link">CALCULATOR</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/innovations" routerLinkActive="active-link"
+                        (click)="savepageclicked('innovations')">INNOVATIONS</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/media" routerLinkActive="active-link"
+                        (click)="savepageclicked('media')">MEDIA</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/careers" routerLinkActive="active-link"
+                        (click)="savepageclicked('careers')">CAREERS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/contact" routerLinkActive="active-link"
+                        (click)="savepageclicked('contact')">CONTACT</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+</div>
+
+<div class="showNav sticky-top">
+    <nav class=" navbar navbar-expand-lg navbar-light bg-light  py-4 sticky-top cl ">
+
+        <a routerLink="/home"><img src="../../../../assets/statuslogo.svg" style="width: 200px;"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto topnav myheight nav-fill">
+                <!-- w-100  -->
+                <li class="nav-item active">
+                    <a data-toggle="collapse" data-target="#navbarSupportedContent" class="nav-link" routerLink="/home"
+                        routerLinkActive="active-link" (click)="savepageclicked('home')">HOME<span
+                            class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown" routerLinkActive="active-link">
+                    <a class="nav-link" id="navdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">PRODUCTS</a>
+
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a data-toggle="collapse" data-target="#navbarSupportedContent" class="dropdown-item"
+                            routerLink="/investments" (click)="savepageclicked('investments')">INVESTMENTS</a>
+                        <a data-toggle="collapse" data-target="#navbarSupportedContent" class="dropdown-item"
+                            routerLink="/loans" (click)="savepageclicked('loans')">LOANS</a>
+                        <!-- <a class="dropdown-item" routerLink="/savingsaccount">SAVINGS ACCOUNT</a> -->
+                    </div>
+                
+                </li>
+                <li class="nav-item">
+                    <a data-toggle="collapse" data-target="#navbarSupportedContent" class="nav-link"
+                        routerLink="/mortgage" routerLinkActive="active-link"
+                        (click)="savepageclicked('mortgage')">MORTGAGE</a>
+                </li>
+                <li class="nav-item">
+                    <a data-toggle="collapse" data-target="#navbarSupportedContent" class="nav-link"
+                        routerLink="/calculator" routerLinkActive="active-link">CALCULATOR</a>
+                </li>
+                <li class="nav-item">
+                    <a data-toggle="collapse" data-target="#navbarSupportedContent" class="nav-link"
+                        routerLink="/innovations" routerLinkActive="active-link"
+                        (click)="savepageclicked('innovations')">INNOVATIONS</a>
+                </li>
+
+                <li class="nav-item">
+                    <a data-toggle="collapse" data-target="#navbarSupportedContent" class="nav-link" routerLink="/media"
+                        routerLinkActive="active-link" (click)="savepageclicked('media')">MEDIA</a>
+                </li>
+                <li class="nav-item">
+                    <a data-toggle="collapse" data-target="#navbarSupportedContent" class="nav-link"
+                        routerLink="/careers" routerLinkActive="active-link"
+                        (click)="savepageclicked('careers')">CAREERS</a>
+                </li>
+                <li class="nav-item">
+                    <a data-toggle="collapse" data-target="#navbarSupportedContent" class="nav-link"
+                        routerLink="/contact" routerLinkActive="active-link"
+                        (click)="savepageclicked('contact')">CONTACT</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>

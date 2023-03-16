@@ -1,0 +1,26 @@
+
+
+/* Dashed border */
+hr.dashed {
+  border-top: 3px dashed #bbb;
+}
+
+.cl {
+  text-align: center; 
+  color: cornflowerblue;
+  font-size: xx-large;
+  font-weight: 400;
+}
+
+.font {
+  font-size: x-large;
+}
+
+.bd {
+  border-style: double double double double;
+}
+
+.round {
+    border-radius: 20px;
+    background-color: #B2CDEC;
+}

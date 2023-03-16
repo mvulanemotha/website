@@ -1,0 +1,47 @@
+.topnav a:hover {
+    border-bottom: 2px solid #6ABDC5;
+}
+
+.cl {
+    background-color: whitesmoke;
+}
+
+a {
+    color: #939598
+}
+
+div {
+    color: #939598
+}
+
+.active-link {
+    background-color: #B2CDEC;
+    color: white;
+}
+
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+    /* HERE */
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .myheight {
+        width: 800px;
+    }
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .myheight {
+        width: 1100px;
+    }
+}

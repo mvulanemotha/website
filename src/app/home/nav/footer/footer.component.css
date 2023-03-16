@@ -1,0 +1,54 @@
+.cl {
+    background-color:lightblue
+}
+
+.wt {
+    
+    font-weight: 500;
+}
+.lb {
+    color: white 
+}
+
+
+
+.contact {
+    background-color:  lightcyan;
+}
+
+
+.bg {
+    background-color: #3767AF;
+}
+
+a:hover{
+    color: #939598;
+    text-decoration: none;
+}
+
+img {
+    border-radius: 70%;
+}
+
+.imgS{
+    max-width: 40px;
+}
+
+.hover:hover {
+    color: #939598
+}
+
+
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+   .liner {
+    border-left: 1px solid white;
+}
+
+.linel {
+    border-right: 1px solid white;
+}
+}
+
+
