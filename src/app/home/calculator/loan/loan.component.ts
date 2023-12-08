@@ -136,8 +136,6 @@ export class LoanComponent implements OnInit {
   }
 
 
-
-
   // show rates
   showRates() {
     this.btnIntrestRates = true;
@@ -183,6 +181,7 @@ export class LoanComponent implements OnInit {
       }
       if (this.term == 3) {
         this.rate = 8.25;
+        //this.rate = 10.25
         this.fiveRows = false
         this.fourRows = false
         this.threeRows = true
@@ -196,6 +195,7 @@ export class LoanComponent implements OnInit {
         this.fourRows = true
         this.threeRows = true
         this.rate = 8.75;
+        //this.rate = 11; 
       }
     }
 
@@ -217,11 +217,6 @@ export class LoanComponent implements OnInit {
 
     //var percent = ((this.rate / 100))
     var percent = ((this.rate / 100))
-    
-
-    
-    
-
 
     /*
     this.rowOne = parseFloat(((this.investment) * (((1 + (((percent) / 365)))) ** (365 * 1))).toFixed(2))
@@ -240,24 +235,31 @@ export class LoanComponent implements OnInit {
 
     this.minPay = parseFloat(this.minPay.toFixed(2))
     this.maxPay = parseFloat(this.maxPay.toFixed(2))
-    
-    
-    let newRate = (4)/100
-    
-    var years = 360/360
-    
-    var month = parseFloat((( 1200 ) * (((1 + (((newRate) / 12)))) ** (12 * years))).toFixed(2)) - 1200
+
+
+    /*
+    let newRate = (4) / 100
+
+    var years = 360 / 360
+
+    var month = parseFloat(((1200) * (((1 + (((newRate) / 12)))) ** (12 * years))).toFixed(2)) - 1200
     //let test = parseFloat(((15954737.90) * ((1 + (newRate / 360)) ** 31)).toFixed(2)) - 15954737.90
     
     console.log(month)
-    
-    
+    */
+
+    let partialInterest = 0
+
     this.minPay = this.minPay.toLocaleString("en-US").toString()
     this.maxPay = this.maxPay.toLocaleString("en-US").toString()
 
     this.totalInterest = parseFloat((yearTotal * this.term).toFixed(2))
 
+    partialInterest = parseFloat((yearTotal * this.term).toFixed(2)) - (57405.055)
+
     this.totalAmount = parseFloat((this.totalInterest + this.investment).toFixed(2))
+
+
 
     //interest per year
 
@@ -272,6 +274,7 @@ export class LoanComponent implements OnInit {
     if (this.term == 3) {
       this.rowTwo = avarage
       this.rowThree = avarage
+      //this.rowThree = avarage / 2
     }
 
     if (this.term == 4) {
@@ -288,6 +291,7 @@ export class LoanComponent implements OnInit {
     }
 
     this.totalInterest = this.totalInterest.toLocaleString("en-US").toString()
+    //this.totalInterest = partialInterest.toLocaleString("en-US").toString()
     this.totalAmount = this.totalAmount.toLocaleString("en-US").toString()
 
     //move to results when calculation is done
@@ -295,7 +299,7 @@ export class LoanComponent implements OnInit {
 
   }
 
-  
+
   // calculate growth
   growthRate = () => {
 

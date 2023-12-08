@@ -5,8 +5,8 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class EmailService {
-
-  url = 'https://www.mkhululimotha.com/app/';
+  
+  url = "https://vpsportal.scbs.co.sz/scbsserver/"
   //url = "http://localhost:3000/";
 
   constructor(private http: HttpClient) { }
@@ -22,12 +22,12 @@ export class EmailService {
 
   //get tempcode
   getTempcode(tempCode: string) {
-
+    
     return this.http.get(this.url + 'clientapp/tempcode', { params: { tempCode: tempCode } })
-
+  
   }
   
-
+  
   sendMessage2() {
 
     let biza = 'Bhiza';

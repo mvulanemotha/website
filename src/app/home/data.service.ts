@@ -7,20 +7,21 @@ import { DatePipe } from '@angular/common'
 })
 export class DataService {
 
-  url = "https://www.mkhululimotha.com/stats/"
-  //url = "http://localhost:3000/app/";
+  //url = "http://localhost:3005/stats/";
+  url = "https://vpsportal.scbs.co.sz/stats/stats/"
   
+
   currentDateTime: any;
   visitor: string[] = [];
-  
+
   constructor(private http: HttpClient, private date: DatePipe) {
-    
+
     this.currentDateTime = this.date.transform((new Date), 'yyyy-MM-dd HH:mm:ss');
   }
 
   // function add value if doesnt exe
   sitevisit = (value: any) => {
-    
+
     try {
 
       if (!this.visitor.includes(value)) {

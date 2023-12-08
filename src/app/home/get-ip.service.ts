@@ -8,9 +8,12 @@ import { DatePipe } from '@angular/common'
 })
 export class GetIPService {
 
-  //url = "http://localhost:3000/stats/";
- url = "https://www.mkhululimotha.com/stats/stats/"
-
+  //url = "http://localhost:3005/stats/";
+  
+  url = "https://vpsportal.scbs.co.sz/stats/stats/"
+  //154.26.153.151
+  //url = "https://www.mkhululimotha.com/stats/stats/"
+  
   currentDateTime: any;
 
   constructor(private http: HttpClient, private date: DatePipe) {

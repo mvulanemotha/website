@@ -8,11 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class MediaComponent implements OnInit {
 
   showImg: boolean;
-
+  firstGm = false
+  secondGm = false;
+  
   constructor() {
     this.showImg = false;
   }
-
+  
   ngOnInit(): void {
   }
 
